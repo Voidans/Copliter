@@ -297,6 +297,7 @@ int main() {
     model.load_block(0); // 尝试加载基础块
     
     std::cout << "简易AI系统已启动 (输入 'exit' 退出)\n";
+    std::cout << "别担心，很快就可以好的。\n"
     
     while (true) {
         std::cout << "你: ";
