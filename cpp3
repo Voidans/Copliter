@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+
+class addString {
+public:
+  void asnumber(int a, int b) const {
+      std::cout << "Sum: " << (a + b) << std::endl;
+  }
+  std::string operator()(const std::string& str1, const std::string& str2) const {
+      return str1 + str2;
+  }
+};
+
+std::string inputVar() { // Changed return type from void to std::string
+   std::string input1v, input2v;
+   std::cin >> input1v;
+   std::cin >> input2v;//ou, may god, this bad jieguo.
+   if (input1v == "int") { // Fixed syntax error
+	   std::cout << "Input is an integer type." << std::endl;
+   }
+   else {
+	   std::cout << "Input is not an integer type." << std::endl;
+   }
+   return input1v + input2v; // Corrected return statement
+}
+
+int main()
+{
+  addString adder;
+    #include <iostream>
+    #include <string>
+    #include <cctype>
+
+    bool isInteger(const std::string& s) {
+        if (s.empty()) return false;
+        size_t start = (s[0] == '-' || s[0] == '+') ? 1 : 0;
+        for (size_t i = start; i < s.size(); ++i) {
+            if (!std::isdigit(s[i])) return false;
+        }
+        return true;
+    }
+
+    std::string inputVar() {
+        std::string input1v, input2v;
+        std::cin >> input1v;
+        std::cin >> input2v;
+        if (isInteger(input1v) && isInteger(input2v)) {
+            std::cout << "Both inputs are integers." << std::endl;
+        } else {
+            std::cout << "At least one input is not an integer." << std::endl;
+        }
+        return input1v + input2v;
+    }
+    if (isInteger(input1v) && isInteger(input2v)) {
+        int sum = std::stoi(input1v) + std::stoi(input2v);
+        std::cout << "Sum: " << sum << std::endl;
+        return std::to_string(sum);
+    }
+  adder.asnumber(5, 10);
+  std::cout << "string1 + string2 = " << inputVar() << std::endl; // Fixed incorrect function name
+}//@copilot
